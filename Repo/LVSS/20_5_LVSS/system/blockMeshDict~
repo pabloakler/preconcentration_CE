@@ -1,0 +1,108 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.4                                   |
+|   \\  /    A nd           | Web:      http://www.openfoam.org               |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+
+    root            "";
+    case            "";
+    instance        "";
+    local           "";
+
+    class           dictionary;
+    object          blockMeshDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+//sector circular de diametro 100 micras y 30 cm de largo
+
+scale 0.001;
+ 
+vertices
+(
+    (0 0 0)
+    (0.049952 0.0021810 0)
+    (0.049952 0.0021810 1000) 
+    (0 0 1000)
+    (0.049952 -0.0021810 0) 
+    (0.049952 -0.0021810 1000)
+);
+ 
+blocks
+(
+    hex (0 4 1 0 3 5 2 3) (1 1 16000) simpleGrading (1 1 (20 1))
+);
+ 
+edges
+(
+);
+ 
+boundary
+(
+     front
+     { 
+           type wedge;
+           faces  
+           (
+               (0 1 2 3)
+           );
+     }
+     
+     back
+     { 
+           type wedge;
+           faces  
+           (
+               (0 3 5 4)
+           );
+     }
+     
+     wall
+     { 
+           type wall;
+           faces  
+           (
+               (1 4 5 2)
+           );
+     }
+     
+     inlet
+     { 
+           type patch;
+           faces  
+           (
+               (0 4 1 0)
+           );
+     }
+     
+     outlet
+     { 
+           type patch;
+           faces  
+           (
+               (3 5 2 3)
+           );
+     }
+     
+     axis
+     { 
+           type empty;
+           faces  
+           (
+               (0 3 3 0)
+           );
+      }
+);
+ 
+mergePatchPairs
+(
+);
+
+// ************************************************************************* //
