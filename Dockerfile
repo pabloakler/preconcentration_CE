@@ -1,0 +1,3 @@
+FROM microfluidica/electromicrotransport
+
+COPY preconcentrationCE ${ELECTROMICROTRANSPORT_TUTORIALS}/preconcentrationCE
