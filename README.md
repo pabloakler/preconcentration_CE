@@ -1,12 +1,13 @@
 # preconcentration_CE
 
+[![Docker](https://github.com/pabloakler/preconcentration_CE/actions/workflows/docker.yml/badge.svg)](https://github.com/pabloakler/preconcentration_CE/actions/workflows/docker.yml)
 [![Docker image](https://img.shields.io/badge/docker%20image-microfluidica%2Fpreconcentration--ce-0085a0)](https://hub.docker.com/r/microfluidica/preconcentration-ce/)
 
 Application cases for preconcentration techniques described in the book chapter for running with [electroMicroTransport](https://gitlab.com/santiagomarquezd/electroMicroTransport).
 
 ## Docker usage
 
-To run the application cases, you can use the Docker image [microfluidica/preconcentration-ce](https://hub.docker.com/r/microfluidica/preconcentration-ce/), which already includes an installation of electroMicroTransport.
+To run the application cases, you can use the [`microfluidica/preconcentration-ce`](https://hub.docker.com/r/microfluidica/preconcentration-ce/) Docker image, which already includes an installation of electroMicroTransport.
 
 To run the Docker image, you can use the following command (which will mount the current directory so that you can access your files from the container):
 
